@@ -1,0 +1,26 @@
+{
+
+  "manifest_version": 2,
+  "name": "YandexBUR",
+  "version": "0.1",
+
+  "description": "Yandex Bulk URL Remove. Массовое удаление URL из Яндекс Вебмастера",
+  "homepage_url": "https://github.com/klavatron/YandexBUR",
+  "icons": {
+    "48": "icons/index.png"
+  },
+
+  "background": {
+    "scripts": ["jquery-1.7.1.min.js","bg.js"]  
+  },
+  "permissions": [
+    "https://webmaster.yandex.ru/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://webmaster.yandex.ru/site/*/tools/del-url/*"],
+      "js": ["jquery-1.7.1.min.js", "remover.js"]
+    }
+  ]
+
+}
